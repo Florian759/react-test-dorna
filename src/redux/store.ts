@@ -1,8 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import seasonSlice from '../reducers/seasonSlice';
 
 export const store = configureStore({
   reducer: {
-
+    season: seasonSlice
   },
 });
 
