@@ -1,6 +1,12 @@
 import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+export const WrapperApp = styled('div')(`
+  height: 100%;
+  width: 100%;
+  background-color: #f2f2f2;
+`);
+
 export const WrapperRoot = styled('div')(`
   height: 100%;
   width: 100%;
@@ -16,3 +22,8 @@ export const ContainerWithHeader = styled(Container)(() => ({
   overflow: 'hidden',
   padding: '60px 24px 90px 24px',
 }));
+
+export const WrapperFlexRow = styled('div')(`
+  display: flex;
+  flex-direction: row;
+`);
