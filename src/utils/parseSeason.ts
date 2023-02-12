@@ -11,8 +11,8 @@ export function parseSeason(data: ICalendar): ISeasonState {
             dateOfStart: new Date(data.dateOfStart),
             dateOfEnd: new Date(data.dateOfEnd),
         },
-        events: data.events?.map((item) => ({
-        	id: item.id,
+        events: data.events.map((item) => ({
+            id: item.id,
             sequence: item.sequence,
             code: item.code,
             shortName: item.shortName,
@@ -28,8 +28,8 @@ export function parseSeason(data: ICalendar): ISeasonState {
                     dateOfEnd: new Date(item.schedule.localTime.dateOfEnd),
                 }
             }    
-        })),
-    }
+        }))
+    };
 
 	return result;
 }
