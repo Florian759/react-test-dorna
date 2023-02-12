@@ -6,7 +6,7 @@ import { seasonSetData, selectSeason } from './reducers/seasonSlice';
 import { useAppDispatch, useAppSelector } from './redux/hooks';
 import { calendarRequest } from './requests/calendarRequest';
 import { ICalendar } from './models/ICalendar';
-import { ContainerWithHeader, WrapperRoot } from './components/style/AppStyle';
+import { ContainerWithHeader, WrapperApp } from './components/style/AppStyle';
 import Header from './components/Header';
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
   }, [season, dispatch]);
 
   return (
-    <WrapperRoot>
+    <WrapperApp>
       <Header />
       <ContainerWithHeader maxWidth="xl">
         <Routes>
@@ -33,7 +33,7 @@ function App() {
             <Route path="/event/:id" element={<EventDetailsPage/>} />
           </Routes>
       </ContainerWithHeader>
-    </WrapperRoot>
+    </WrapperApp>
   );
 }
 
