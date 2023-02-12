@@ -3,10 +3,10 @@ import { ICalendar } from '../models/ICalendar';
 import { IEvent } from '../models/IEvent';
 import { ISeason } from '../models/ISeason';
 import { RootState } from '../redux/store';
-import { parseSeason } from '../utils/parseSeason';
+import { parseSeason, ParseSeasonResultType } from '../utils/parseSeason';
 
 export interface ISeasonState {
-  props?: ISeason;
+  season?: ISeason;
   events?: Array<IEvent>;
 }
 
@@ -19,11 +19,11 @@ export const seasonSlice = createSlice({
   initialState,
   reducers: {
     seasonSetData: (state, action: PayloadAction<Array<ICalendar>>) => {
-      const data: ISeasonState = parseSeason(action.payload[0])
+      const data: ParseSeasonResultType = parseSeason(action.payload[0])
 
-      state.props = data.props;
+      state.season = data.season;
       state.events = data.events;
-    }
+    },
   },
 });
 

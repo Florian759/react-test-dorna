@@ -1,9 +1,15 @@
 import { ICalendar } from "../models/ICalendar";
-import { ISeasonState } from "../reducers/seasonSlice";
+import { IEvent } from "../models/IEvent";
+import { ISeason } from "../models/ISeason";
 
-export function parseSeason(data: ICalendar): ISeasonState {
-    const result: ISeasonState = {
-        props: {
+export type ParseSeasonResultType = {
+    season: ISeason;
+    events: Array<IEvent>;
+}
+
+export function parseSeason(data: ICalendar): ParseSeasonResultType {
+    const result: ParseSeasonResultType = {
+        season: {
             id: data.id,
             season: data.season,
             name: data.name,

@@ -14,7 +14,7 @@ function App() {
   const dispatch = useAppDispatch();
   
   useEffect(() => {
-    if (!season.props?.id) {
+    if (!season.season?.id) {
       calendarRequest().then(response => {
         const seasons: Array<ICalendar> = response.data
         dispatch(seasonSetData(seasons))
