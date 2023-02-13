@@ -1,7 +1,7 @@
 import React from 'react';
 import { ISeason } from '../models/ISeason';
 import PropertyLabel from './PropertyLabel';
-import { WrapperCard } from './style/SeasonDetailsStyle';
+import { WrapperCard } from './style/AppStyle';
 
 type PropsType = {
   data?: ISeason;
