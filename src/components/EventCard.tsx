@@ -3,21 +3,16 @@ import { Avatar, Grid } from "@mui/material";
 import { CircuitImage, CodeEvent, WrapperHeaderEvent, WrapperEventItem, WrapperImage, WrapperTitleEvent, DateEvent, SubTitleEvent } from "./style/EventItemStyle";
 import { IEvent } from "../models/IEvent";
 import { useNavigate } from "react-router-dom";
+import { getCircuitUrl, getFlagUrl } from "../utils/getUrls";
+import { dateShortFormat } from "../utils/formatDate";
 
 type PropsType = {
 	item: IEvent;
 }
 
-const options: Intl.DateTimeFormatOptions = {
-  day: "numeric", month: "short"
-};
-
 export function EventCard({ item }: PropsType) {
 	const navigate = useNavigate();
 	const code: string = item.code;
-	const dateOfStart: string = item.schedule.localTime.dateOfStart.toLocaleDateString("en-GB", options);
-	const flagUrl: string = `https://dornacorporatestorage.blob.core.windows.net/public-assets/images/events/${code}/flag.png`;
-  const circuitUrl: string = `https://dornacorporatestorage.blob.core.windows.net/public-assets/images/events/${code}/circuit.png`;
 
   const handleOnClick = (id: string) => {
     navigate(`/event/${id}`)
@@ -29,16 +24,16 @@ export function EventCard({ item }: PropsType) {
 				<WrapperHeaderEvent>
 					<Avatar 
 						alt={code} 
-						src={flagUrl} 
+						src={getFlagUrl(code)} 
 						sx={{ width: 40, height: 40 }}
 					/>	
 					<WrapperTitleEvent>
 						<CodeEvent>{code}</CodeEvent>
-						<DateEvent>{dateOfStart}</DateEvent>
+						<DateEvent>{dateShortFormat(item.schedule.localTime.dateOfStart)}</DateEvent>
 					</WrapperTitleEvent>
 				</WrapperHeaderEvent>
 				<WrapperImage>
-					<CircuitImage alt={code} src={circuitUrl} />
+					<CircuitImage alt={code} src={getCircuitUrl(code)} />
 				</WrapperImage>
 				<SubTitleEvent>{`${item.sequence} - ${item.shortName.toLowerCase()}`}</SubTitleEvent>
     	</WrapperEventItem>
