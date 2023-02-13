@@ -8,6 +8,7 @@ export const WrapperToolbarSection = styled('div')(() => ({
     marginTop: 20,
     display: 'flex',
     alignItems: 'center',
+    marginBottom: 10,
 }));
 
 export const EventIcon = styled(CalendarMonthIcon)(({ theme }) => ({
@@ -46,6 +47,6 @@ export const Title = styled(Typography)(({ theme }) => ({
     height: 100%;
     width: 100%;
     overflow-y: auto;
-    padding-right: 5px
+    padding-right: 5px;
     flex-grow: 1;
 `);

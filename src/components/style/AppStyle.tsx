@@ -22,7 +22,7 @@ export const ContainerWithHeader = styled(Container)(() => ({
   flexDirection: 'column',
   boxSizing: 'border-box',
   overflow: 'hidden',
-  padding: '60px 24px 90px 24px',
+  padding: '60px 24px',
 }));
 
 export const WrapperFlexRow = styled('div')(`
