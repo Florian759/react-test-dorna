@@ -7,7 +7,7 @@ import { WrapperFlexRow, WrapperRoot } from '../components/style/AppStyle';
 import { BottonsWrapper, EventIcon, Title, WrapperList, WrapperToolbarSection } from '../components/style/SeasonDetailsPageStyle';
 import { selectSeason } from '../reducers/seasonSlice';
 import { useAppSelector } from '../redux/hooks';
-import EventItem from '../components/EventItem';
+import EventCard from '../components/EventCard';
 
 export function SeasonDetailsPage() {
   const { season, eventsFiltered } = useAppSelector(selectSeason);
@@ -34,7 +34,7 @@ export function SeasonDetailsPage() {
 
       <WrapperList>
         <Grid container spacing={2}>
-          {eventsFiltered.map(item => <EventItem key={item.id} item={item} />)}
+          {eventsFiltered.map(item => <EventCard key={item.id} item={item} />)}
         </Grid>
 			</WrapperList>
     </WrapperRoot>

@@ -12,7 +12,7 @@ const options: Intl.DateTimeFormatOptions = {
   day: "numeric", month: "short"
 };
 
-export function EventItem({ item }: PropsType) {
+export function EventCard({ item }: PropsType) {
 	const navigate = useNavigate();
 	const code: string = item.code;
 	const dateOfStart: string = item.schedule.localTime.dateOfStart.toLocaleDateString("en-GB", options);
@@ -46,4 +46,4 @@ export function EventItem({ item }: PropsType) {
   )
 }
 
-export default EventItem;
+export default EventCard;
