@@ -5,6 +5,7 @@ import { ISeason } from '../models/ISeason';
 import { RootState } from '../redux/store';
 import { filterEvents } from '../utils/filterEvents';
 import { parseSeason, ParseSeasonResultType } from '../utils/parseSeason';
+import { sortEventsByDateOfStart } from '../utils/sortEvents';
 
 export interface ISeasonState {
   filter: string;
@@ -27,7 +28,7 @@ export const seasonSlice = createSlice({
       const data: ParseSeasonResultType = parseSeason(action.payload[0])
 
       state.season = {...data.season};
-      state.events = [...data.events];
+      state.events = sortEventsByDateOfStart([...data.events]);
       state.eventsFiltered = filterEvents({filter: state.filter, events: [...data.events]});
     },
     eventsSetFilter: (state, action: PayloadAction<string>) => {
