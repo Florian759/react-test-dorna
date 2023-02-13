@@ -6,7 +6,7 @@ interface IEventCalendar {
 	shortName: string;
 	sponsoredName: string;
 	circuit: {
-		id: number;
+		id: string;
 		name: string;
 		location: string;
 	},
