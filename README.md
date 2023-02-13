@@ -1,3 +1,21 @@
+## Explicación de las tecnologías utilizadas y motivos
+
+El proyecto era simple, verdaderamente no necesita algunas de las tecnologias que uso en él, algunos ejemplos:
+
+- Redux
+- Reduxjs/toolkit
+- Axios
+- Material UI
+- Styled Component
+
+Uso todas estas tecnologías porque en mi opinión son herramientas comunes en el desarrollo de aplicaciones React, y deben estar en toda evaluación técnica por simple que sea.
+
+## Cosas que me gusta hacer si tengo más tiempo:
+
+- Agregar más tests para garantizar la calidad.
+- Desarrollar una API Rest usando Mongo, Express, SocketIO y Node para leer/guardar los datos.
+- Elaborar un diseño más cuidado.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
