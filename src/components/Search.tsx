@@ -2,18 +2,26 @@ import React, { ChangeEvent } from 'react';
 import { SearchIconWrapper, SearchInput, SearchWrapper } from './style/SearchStyle';
 import SearchIcon from '@mui/icons-material/Search';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { eventsSetFilter, selectSeason } from '../reducers/seasonSlice';
+import { eventsFilterEvents, eventsSetFilter, selectSeason } from '../reducers/seasonSlice';
+
+let timer: NodeJS.Timeout;
 
 export function SearchEvent() {
 	const { filter } = useAppSelector(selectSeason);
 	const dispatch = useAppDispatch();
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement> ) => {
-    event.preventDefault();
+    	event.preventDefault();
+		
 		dispatch(eventsSetFilter(event.target.value))
+
+		if (timer) clearTimeout(timer);	
+		timer = setTimeout(() => {
+			dispatch(eventsFilterEvents())
+		}, 500);
 	}
 
-  return (
+	return (
 		<SearchWrapper>
 			<SearchIconWrapper>
 					<SearchIcon />

@@ -32,13 +32,15 @@ export const seasonSlice = createSlice({
       state.eventsFiltered = filterEvents({filter: state.filter, events: [...data.events]});
     },
     eventsSetFilter: (state, action: PayloadAction<string>) => {
-      state.filter = action.payload;
-      state.eventsFiltered = filterEvents({filter: state.filter, events: [...state.events]});
+      state.filter = action.payload;   
+    },
+    eventsFilterEvents: (state, action: PayloadAction<undefined>) => {
+      state.eventsFiltered = filterEvents({filter: state.filter, events: [...state.events]});        
     }
   },
 });
 
-export const { seasonSetData, eventsSetFilter } = seasonSlice.actions;
+export const { seasonSetData, eventsSetFilter, eventsFilterEvents } = seasonSlice.actions;
 
 export const selectSeason = (state: RootState) => state.season;
 
