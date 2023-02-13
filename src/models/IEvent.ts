@@ -11,8 +11,8 @@ export interface IEvent {
 	},
 	schedule: {
 		localTime: {
-			dateOfStart?: Date;
-			dateOfEnd?: Date;
+			dateOfStart: Date;
+			dateOfEnd: Date;
 		}
 	}
 }
