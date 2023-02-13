@@ -41,3 +41,11 @@ export const WrapperCard = styled('div')(({ theme }) => `
   background-color: rgba(255,255,255,.8);
   box-sizing: border-box;
 `);
+
+export const WrapperHelpCard = styled(WrapperCard)(({ theme }) => `
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2em;
+`);

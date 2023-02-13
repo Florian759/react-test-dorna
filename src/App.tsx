@@ -8,6 +8,7 @@ import { calendarRequest } from './requests/calendarRequest';
 import { ICalendar } from './models/ICalendar';
 import { ContainerWithHeader, WrapperApp } from './components/style/AppStyle';
 import Header from './components/Header';
+import HelpPage from './pages/HelpPage';
 
 function App() {
   const season = useAppSelector(selectSeason) ;
@@ -31,6 +32,7 @@ function App() {
         <Routes>
             <Route path="/" element={<SeasonDetailsPage/>} />
             <Route path="/event/:id" element={<EventDetailsPage/>} />
+            <Route path="/help" element={<HelpPage/>} />
           </Routes>
       </ContainerWithHeader>
     </WrapperApp>
