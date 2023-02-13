@@ -10,6 +10,8 @@ export const WrapperApp = styled('div')(`
 export const WrapperRoot = styled('div')(`
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `);
 
 export const ContainerWithHeader = styled(Container)(() => ({
