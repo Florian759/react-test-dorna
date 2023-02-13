@@ -28,10 +28,11 @@ export const seasonSlice = createSlice({
 
       state.season = {...data.season};
       state.events = [...data.events];
+      state.eventsFiltered = filterEvents({filter: state.filter, events: [...data.events]});
     },
     eventsSetFilter: (state, action: PayloadAction<string>) => {
       state.filter = action.payload;
-      state.eventsFiltered = filterEvents({filter: state.filter, events: state.events});
+      state.eventsFiltered = filterEvents({filter: state.filter, events: [...state.events]});
     }
   },
 });
