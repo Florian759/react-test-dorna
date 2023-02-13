@@ -4,7 +4,7 @@ import EventDetailsPage from './pages/EventDetailsPage';
 import SeasonDetailsPage from './pages/SeasonDetailsPage';
 import { seasonSetData, selectSeason } from './reducers/seasonSlice';
 import { useAppDispatch, useAppSelector } from './redux/hooks';
-import { calendarRequest } from './requests/calendarRequest';
+import { calendarService } from './services/calendarService';
 import { ICalendar } from './models/ICalendar';
 import { ContainerWithHeader, WrapperApp } from './components/style/AppStyle';
 import Header from './components/Header';
@@ -16,7 +16,7 @@ function App() {
   
   useEffect(() => {
     if (!season.season?.id) {
-      calendarRequest().then(response => {
+      calendarService().then(response => {
         const seasons: Array<ICalendar> = response.data
         dispatch(seasonSetData(seasons))
       }).catch(e => {
