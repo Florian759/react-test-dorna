@@ -5,20 +5,20 @@ import { WrapperHelpCard, WrapperRoot } from '../components/style/AppStyle';
 
 export function HelpPage() {
 	const breadcrumbs: Array<PropsTypeBread> = [
-		{name: "Season", to: "/"}, 
-		{name: "Help", to: undefined}
-	]
+		{name: 'Season', to: '/'}, 
+		{name: 'Help', to: undefined}
+	];
 
-  return (
-    <WrapperRoot>
-		<BreadCrumbs data={breadcrumbs}/>
+	return (
+		<WrapperRoot>
+			<BreadCrumbs data={breadcrumbs}/>
 
-		<WrapperHelpCard >
-			<EmojiEmotionsIcon/>
-			I'm sorry, I can not help you!
-		</WrapperHelpCard>
-    </WrapperRoot>
-  )
+			<WrapperHelpCard >
+				<EmojiEmotionsIcon/>
+				I`&apos;m sorry, I can not help you!
+			</WrapperHelpCard>
+		</WrapperRoot>
+	);
 }
 
 export default HelpPage;

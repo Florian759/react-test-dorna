@@ -15,29 +15,29 @@ export interface ISeasonState {
 }
 
 const initialState: ISeasonState = {
-  filter: '',
-  events: [],
-  eventsFiltered: []
+	filter: '',
+	events: [],
+	eventsFiltered: []
 };
 
 export const seasonSlice = createSlice({
-  name: 'season',
-  initialState,
-  reducers: {
-    seasonSetData: (state, action: PayloadAction<Array<ICalendar>>) => {
-      const data: ParseSeasonResultType = parseSeason(action.payload[0])
+	name: 'season',
+	initialState,
+	reducers: {
+		seasonSetData: (state, action: PayloadAction<Array<ICalendar>>) => {
+			const data: ParseSeasonResultType = parseSeason(action.payload[0]);
 
-      state.season = {...data.season};
-      state.events = sortEventsByDateOfStart([...data.events]);
-      state.eventsFiltered = filterEvents({filter: state.filter, events: [...data.events]});
-    },
-    eventsSetFilter: (state, action: PayloadAction<string>) => {
-      state.filter = action.payload;   
-    },
-    eventsFilterEvents: (state, action: PayloadAction<undefined>) => {
-      state.eventsFiltered = filterEvents({filter: state.filter, events: [...state.events]});        
-    }
-  },
+			state.season = {...data.season};
+			state.events = sortEventsByDateOfStart([...data.events]);
+			state.eventsFiltered = filterEvents({filter: state.filter, events: [...data.events]});
+		},
+		eventsSetFilter: (state, action: PayloadAction<string>) => {
+			state.filter = action.payload;   
+		},
+		eventsFilterEvents: (state) => {
+			state.eventsFiltered = filterEvents({filter: state.filter, events: [...state.events]});        
+		}
+	},
 });
 
 export const { seasonSetData, eventsSetFilter, eventsFilterEvents } = seasonSlice.actions;

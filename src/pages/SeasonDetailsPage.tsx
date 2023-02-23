@@ -10,35 +10,35 @@ import { useAppSelector } from '../redux/hooks';
 import EventCard from '../components/EventCard';
 
 export function SeasonDetailsPage() {
-  const { season, eventsFiltered } = useAppSelector(selectSeason);
-  const breadcrumbs: Array<PropsTypeBread> = [
-    {name: "Season", to: "/"}, 
-  ]
+	const { season, eventsFiltered } = useAppSelector(selectSeason);
+	const breadcrumbs: Array<PropsTypeBread> = [
+		{name: 'Season', to: '/'}, 
+	];
 
-  return (
-    <WrapperRoot>
-      <Breadcrumbs data={breadcrumbs}/>
-      <SeasonDetails data={season} />
-      <WrapperToolbarSection> 
+	return (
+		<WrapperRoot>
+			<Breadcrumbs data={breadcrumbs}/>
+			<SeasonDetails data={season} />
+			<WrapperToolbarSection> 
 
-        <WrapperFlexRow>
-          <EventIcon />
-          <Title variant="h3" noWrap>Events</Title>
-        </WrapperFlexRow>
+				<WrapperFlexRow>
+					<EventIcon />
+					<Title variant="h3" noWrap>Events</Title>
+				</WrapperFlexRow>
 
-        <BottonsWrapper>
-          <SearchEvent />
+				<BottonsWrapper>
+					<SearchEvent />
 				</BottonsWrapper>
 
-      </WrapperToolbarSection> 
+			</WrapperToolbarSection> 
 
-      <WrapperList>
-        <Grid container spacing={2}>
-          {eventsFiltered.map(item => <EventCard key={item.id} item={item} />)}
-        </Grid>
+			<WrapperList>
+				<Grid container spacing={2}>
+					{eventsFiltered.map(item => <EventCard key={item.id} item={item} />)}
+				</Grid>
 			</WrapperList>
-    </WrapperRoot>
-  )
+		</WrapperRoot>
+	);
 }
 
 export default SeasonDetailsPage;

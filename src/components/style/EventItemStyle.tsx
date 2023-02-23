@@ -22,14 +22,14 @@ export const WrapperEventItem = styled('div')(({ theme }) => `
   };
 `);
 
-export const WrapperHeaderEvent = styled('div')(({ theme }) => `
+export const WrapperHeaderEvent = styled('div')(() => `
   display: flex;
   width: 100%;
   padding: 10px;
   border-radius: 10px;
 `);
 
-export const WrapperTitleEvent = styled('div')(({ theme }) => `
+export const WrapperTitleEvent = styled('div')(() => `
   width: 100%;
   height: 44px;
   padding: 0 10px;
@@ -38,11 +38,11 @@ export const WrapperTitleEvent = styled('div')(({ theme }) => `
   align-items: center;
 `);
 
-export const CodeEvent = styled(Typography)(({ theme }) => ({
-  flexGrow: 1,
-  fontWeight: 600,
-  fontSize: '1em',
-  textTransform: 'uppercase'
+export const CodeEvent = styled(Typography)(() => ({
+	flexGrow: 1,
+	fontWeight: 600,
+	fontSize: '1em',
+	textTransform: 'uppercase'
 }));
 
 export const SubTitleEvent = styled('span')(`
@@ -52,11 +52,11 @@ export const SubTitleEvent = styled('span')(`
   text-align: center;
 `);
 
-export const DateEvent = styled(Typography)(({ theme }) => ({
-  fontSize: '0.85em',
+export const DateEvent = styled(Typography)(() => ({
+	fontSize: '0.85em',
 }));
 
-export const WrapperImage = styled('div')(({ theme }) => `
+export const WrapperImage = styled('div')(() => `
   height: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -65,14 +65,14 @@ export const WrapperImage = styled('div')(({ theme }) => `
   // background-color: red;
 `);
 
-export const WrapperAbsolute = styled('div')(({ theme }) => `
+export const WrapperAbsolute = styled('div')(() => `
   z-index: 999;
   position: absolute;
   left: 15px;
   top: 15px;
 `);
 
-export const CircuitImage = styled('img')(({ theme }) => `
+export const CircuitImage = styled('img')(() => `
   width: 100%;
   height: 188px;
   aspect-ratio: 1 / 1;

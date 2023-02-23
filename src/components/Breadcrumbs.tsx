@@ -13,14 +13,14 @@ type PropsType = {
 }
 
 export function Breadcrumbs({data}: PropsType): JSX.Element {
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 
-  const handleOnClick = (to: string | undefined) => {
-    if (to) navigate(to);
-  }
+	const handleOnClick = (to: string | undefined) => {
+		if (to) navigate(to);
+	};
 
-  return (
-    <WrapperBreadCrumbs>
+	return (
+		<WrapperBreadCrumbs>
 			<BreadcrumbsMUI aria-label="breadcrumb">
 				{data?.map((item, index) => <BreadcrumbHover
 					key={`${item?.name}${index}` }
@@ -28,8 +28,8 @@ export function Breadcrumbs({data}: PropsType): JSX.Element {
 					onClick={() => handleOnClick(item.to)}
 				/>)}
 			</BreadcrumbsMUI>
-    </WrapperBreadCrumbs>   
-  )
+		</WrapperBreadCrumbs>   
+	);
 }
 
 export default Breadcrumbs;

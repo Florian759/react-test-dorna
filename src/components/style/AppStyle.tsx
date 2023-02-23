@@ -15,14 +15,14 @@ export const WrapperRoot = styled('div')(`
 `);
 
 export const ContainerWithHeader = styled(Container)(() => ({
-  width: '100%',
-  height: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'column',
-  boxSizing: 'border-box',
-  overflow: 'hidden',
-  padding: '60px 24px',
+	width: '100%',
+	height: '100%',
+	display: 'flex',
+	alignItems: 'center',
+	flexDirection: 'column',
+	boxSizing: 'border-box',
+	overflow: 'hidden',
+	padding: '60px 24px',
 }));
 
 export const WrapperFlexRow = styled('div')(`
@@ -42,7 +42,7 @@ export const WrapperCard = styled('div')(({ theme }) => `
   box-sizing: border-box;
 `);
 
-export const WrapperHelpCard = styled(WrapperCard)(({ theme }) => `
+export const WrapperHelpCard = styled(WrapperCard)(() => `
   display: flex;
   flex-direction: column;
   align-items: center;

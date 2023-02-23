@@ -8,33 +8,33 @@ import { IEvent } from '../models/IEvent';
 import EventDetails from '../components/EventDetails';
 
 export function EventDetailsPage () {
-  const { id } = useParams();
-  const { events } = useAppSelector(selectSeason);
-  const [ data, setData ] = useState<IEvent>();
-  const navigate = useNavigate();
+	const { id } = useParams();
+	const { events } = useAppSelector(selectSeason);
+	const [ data, setData ] = useState<IEvent>();
+	const navigate = useNavigate();
 
-  const breadcrumbs: Array<PropsTypeBread> = [
-		{name: "Season", to: "/"},
-    {name: data?.shortName, to: undefined},
-	]
+	const breadcrumbs: Array<PropsTypeBread> = [
+		{name: 'Season', to: '/'},
+		{name: data?.shortName, to: undefined},
+	];
 
-  useEffect(() => {
-    if (id) {
-      const found: IEvent | undefined = events.find(item => item.id === id);    
-      if (found) {
-        setData(found);
-      } else {
-        navigate(`/`);
-      }
-    }
-  }, [id, events, navigate]);
+	useEffect(() => {
+		if (id) {
+			const found: IEvent | undefined = events.find(item => item.id === id);    
+			if (found) {
+				setData(found);
+			} else {
+				navigate('/');
+			}
+		}
+	}, [id, events, navigate]);
 
-  return (
-    <WrapperRoot>
-        <Breadcrumbs data={breadcrumbs}/>
-        <EventDetails data={data}/>
-    </WrapperRoot>
-  )
+	return (
+		<WrapperRoot>
+			<Breadcrumbs data={breadcrumbs}/>
+			<EventDetails data={data}/>
+		</WrapperRoot>
+	);
 }
 
 export default EventDetailsPage;

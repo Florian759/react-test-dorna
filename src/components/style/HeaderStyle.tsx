@@ -24,19 +24,19 @@ export const ToolbarHeader = styled(Toolbar)({
 });
   
 export const TitleApp = styled(Typography)(({ theme }) => ({
-  fontWeight: 800,
-  lineHight: 1.0,
-  fontSize: '1.2rem',
-  letterSpacing: '0.09rem',
-  padding: '5px 0',
-  color: theme.palette.text.primary,
+	fontWeight: 800,
+	lineHight: 1.0,
+	fontSize: '1.2rem',
+	letterSpacing: '0.09rem',
+	padding: '5px 0',
+	color: theme.palette.text.primary,
 }));
 
 export const IconButtonStyle =  styled(IconButton)(({ theme }) => ({
-  transition: theme.transitions.create(['transform'], {
-    duration: theme.transitions.duration.short,
-  }),
-  '&:hover': {
-    color: theme.palette.text.secondary,
-  },
+	transition: theme.transitions.create(['transform'], {
+		duration: theme.transitions.duration.short,
+	}),
+	'&:hover': {
+		color: theme.palette.text.secondary,
+	},
 }));

@@ -11,29 +11,29 @@ export function SearchEvent() {
 	const dispatch = useAppDispatch();
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement> ) => {
-    	event.preventDefault();
+		event.preventDefault();
 		
-		dispatch(eventsSetFilter(event.target.value))
+		dispatch(eventsSetFilter(event.target.value));
 
 		if (timer) clearTimeout(timer);	
 		timer = setTimeout(() => {
-			dispatch(eventsFilterEvents())
+			dispatch(eventsFilterEvents());
 		}, 500);
-	}
+	};
 
 	return (
 		<SearchWrapper>
 			<SearchIconWrapper>
-					<SearchIcon />
+				<SearchIcon />
 			</SearchIconWrapper>
-				<SearchInput
-					placeholder={`search`}
-					inputProps={{ 'aria-label': 'search' }}
-					value={filter}
-					onChange={handleChange}
+			<SearchInput
+				placeholder={'search'}
+				inputProps={{ 'aria-label': 'search' }}
+				value={filter}
+				onChange={handleChange}
 			/>
 		</SearchWrapper>
-  )
+	);
 }
 
 export default SearchEvent;

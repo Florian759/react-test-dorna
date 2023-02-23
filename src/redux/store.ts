@@ -2,13 +2,13 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import seasonSlice from '../reducers/seasonSlice';
 
 export const store = configureStore({
-  reducer: {
-    season: seasonSlice
-  },
-  middleware: (getDefaultMiddleware) =>
-  getDefaultMiddleware({
-    serializableCheck: false,
-  }),
+	reducer: {
+		season: seasonSlice
+	},
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware({
+			serializableCheck: false,
+		}),
 });
 
 export type AppDispatch = typeof store.dispatch;

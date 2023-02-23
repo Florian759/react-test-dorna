@@ -1,6 +1,6 @@
-import React from "react"
-import { WrapperFlexRow } from "./style/AppStyle";
-import { WrapperTitle, WrapperValue } from "./style/PropertyLabelStyle";
+import React from 'react';
+import { WrapperFlexRow } from './style/AppStyle';
+import { WrapperTitle, WrapperValue } from './style/PropertyLabelStyle';
 
 type PropsType = {
   title?: string;
@@ -9,12 +9,12 @@ type PropsType = {
 
 export function PropertyLabel({title, value}: PropsType) {
 
-  return (
-    <WrapperFlexRow>
+	return (
+		<WrapperFlexRow>
 			<WrapperTitle>{title}</WrapperTitle>
 			<WrapperValue>{value}</WrapperValue>
-    </WrapperFlexRow>
-  )
+		</WrapperFlexRow>
+	);
 }
 
 export default PropertyLabel;

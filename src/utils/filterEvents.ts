@@ -1,4 +1,4 @@
-import { IEvent } from "../models/IEvent";
+import { IEvent } from '../models/IEvent';
 
 export type PropstType = {
     filter: string
@@ -6,12 +6,12 @@ export type PropstType = {
 }
 
 export function filterEvents({filter, events}: PropstType): Array<IEvent> {
-    const search: string = filter.replace(' ', '[\\w\\s]*').toLowerCase()
-    const result: Array<IEvent> = (!filter) ? events: events.filter(item => {
-        const line: string = `${item?.code} ${item?.sequence} - ${item?.shortName}`;
+	const search: string = filter.replace(' ', '[\\w\\s]*').toLowerCase();
+	const result: Array<IEvent> = (!filter) ? events: events.filter(item => {
+		const line = `${item?.code} ${item?.sequence} - ${item?.shortName}`;
 
-        return line.toLowerCase().match(`(?<=[\\w]*)${search}(?=[\\w]*)`);
-    }) || [];
+		return line.toLowerCase().match(`(?<=[\\w]*)${search}(?=[\\w]*)`);
+	}) || [];
 
 	return result;
 }
