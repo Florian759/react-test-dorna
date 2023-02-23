@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import { useAppSelector } from '../redux/hooks';
 import { useNavigate, useParams } from 'react-router-dom';
 import { selectSeason } from '../reducers/seasonSlice';
@@ -7,7 +7,7 @@ import Breadcrumbs, { PropsTypeBread } from '../components/Breadcrumbs';
 import { IEvent } from '../models/IEvent';
 import EventDetails from '../components/EventDetails';
 
-export function EventDetailsPage () {
+export const EventDetailsPage:FC = () => {
 	const { id } = useParams();
 	const { events } = useAppSelector(selectSeason);
 	const [ data, setData ] = useState<IEvent>();
@@ -35,6 +35,6 @@ export function EventDetailsPage () {
 			<EventDetails data={data}/>
 		</WrapperRoot>
 	);
-}
+};
 
 export default EventDetailsPage;

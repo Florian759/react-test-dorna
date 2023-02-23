@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Grid } from '@mui/material';
 import { IEvent } from '../models/IEvent';
 import PropertyLabel from './PropertyLabel';
@@ -11,7 +11,7 @@ export type PropsTypeEventCard = {
   data?: IEvent;
 }
 
-export function EventDetails({data}: PropsTypeEventCard) {
+export const EventDetails:FC<PropsTypeEventCard> = ({data}) => {
 	const code: string | undefined = data?.code ;
 
 	return (
@@ -38,6 +38,6 @@ export function EventDetails({data}: PropsTypeEventCard) {
 			</Grid>
 		</WrapperCard>
 	);
-}
+};
 
 export default EventDetails;

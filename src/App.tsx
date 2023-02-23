@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import EventDetailsPage from './pages/EventDetailsPage';
 import SeasonDetailsPage from './pages/SeasonDetailsPage';
@@ -7,7 +7,7 @@ import Header from './components/Header';
 import HelpPage from './pages/HelpPage';
 import { useCalendar } from './hooks/useCalendar';
 
-function App() {
+const App:FC = () => {
 	useCalendar();
 
 	return (
@@ -22,6 +22,6 @@ function App() {
 			</ContainerWithHeader>
 		</WrapperApp>
 	);
-}
+};
 
 export default App;

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { AppBarHeader, IconButtonStyle, TitleApp, ToolbarHeader, WrapperFlexGrow, WrapperHeader } from './style/HeaderStyle';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import { useNavigate } from 'react-router';
 
-export function Header() {
+export const Header:FC = () => {
 	const navigate = useNavigate();
 
 	const handleOnClick = () => {
@@ -27,6 +27,6 @@ export function Header() {
 			</AppBarHeader>
 		</WrapperHeader>
 	);
-}
+};
 
 export default Header;

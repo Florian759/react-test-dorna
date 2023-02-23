@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Avatar, Grid } from '@mui/material';
 import { CircuitImage, CodeEvent, WrapperHeaderEvent, WrapperEventItem, WrapperImage, WrapperTitleEvent, DateEvent, SubTitleEvent } from './style/EventItemStyle';
 import { IEvent } from '../models/IEvent';
@@ -10,7 +10,7 @@ type PropsType = {
 	item: IEvent;
 }
 
-export function EventCard({ item }: PropsType) {
+export const EventCard:FC<PropsType> = ({ item }) => {
 	const navigate = useNavigate();
 	const code: string = item.code;
 
@@ -39,6 +39,6 @@ export function EventCard({ item }: PropsType) {
 			</WrapperEventItem>
 		</Grid>
 	);
-}
+};
 
 export default EventCard;

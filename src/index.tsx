@@ -10,10 +10,10 @@ import { store } from './redux/store';
 import theme from './theme';
 import reportWebVitals from './reportWebVitals';
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>

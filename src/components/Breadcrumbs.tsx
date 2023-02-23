@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Breadcrumbs as BreadcrumbsMUI } from '@mui/material';
 import { useNavigate } from 'react-router';
 import { BreadcrumbHover, WrapperBreadCrumbs } from './style/BreadcrumbsStyle';
@@ -12,7 +12,7 @@ type PropsType = {
 	data?: Array<PropsTypeBread>;
 }
 
-export function Breadcrumbs({data}: PropsType): JSX.Element {
+export const Breadcrumbs:FC<PropsType> = ({data}) => {
 	const navigate = useNavigate();
 
 	const handleOnClick = (to: string | undefined) => {
@@ -30,6 +30,6 @@ export function Breadcrumbs({data}: PropsType): JSX.Element {
 			</BreadcrumbsMUI>
 		</WrapperBreadCrumbs>   
 	);
-}
+};
 
 export default Breadcrumbs;

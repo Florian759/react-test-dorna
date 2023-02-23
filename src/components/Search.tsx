@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, FC } from 'react';
 import { SearchIconWrapper, SearchInput, SearchWrapper } from './style/SearchStyle';
 import SearchIcon from '@mui/icons-material/Search';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
@@ -6,7 +6,7 @@ import { eventsFilterEvents, eventsSetFilter, selectSeason } from '../reducers/s
 
 let timer: NodeJS.Timeout;
 
-export function SearchEvent() {
+export const SearchEvent:FC = () => {
 	const { filter } = useAppSelector(selectSeason);
 	const dispatch = useAppDispatch();
 
@@ -34,6 +34,6 @@ export function SearchEvent() {
 			/>
 		</SearchWrapper>
 	);
-}
+};
 
 export default SearchEvent;

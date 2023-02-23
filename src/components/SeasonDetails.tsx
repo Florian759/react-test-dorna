@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { ISeason } from '../models/ISeason';
 import { dateLongFormat } from '../utils/formatDate';
 import PropertyLabel from './PropertyLabel';
@@ -8,7 +8,7 @@ type PropsType = {
   data?: ISeason;
 }
 
-export function SeasonDetails({data}: PropsType) {
+export const SeasonDetails:FC<PropsType> = ({data}) => {
 
 	return (
 		<WrapperCard >
@@ -17,6 +17,6 @@ export function SeasonDetails({data}: PropsType) {
 			<PropertyLabel title={'Date of end: '} value={dateLongFormat(data?.dateOfEnd)} />
 		</WrapperCard>
 	);
-}
+};
 
 export default SeasonDetails;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Grid } from '@mui/material';
 import { Breadcrumbs, PropsTypeBread } from '../components/Breadcrumbs';
 import SearchEvent from '../components/Search';
@@ -9,7 +9,7 @@ import { selectSeason } from '../reducers/seasonSlice';
 import { useAppSelector } from '../redux/hooks';
 import EventCard from '../components/EventCard';
 
-export function SeasonDetailsPage() {
+export const SeasonDetailsPage:FC = () => {
 	const { season, eventsFiltered } = useAppSelector(selectSeason);
 	const breadcrumbs: Array<PropsTypeBread> = [
 		{name: 'Season', to: '/'}, 
@@ -39,6 +39,6 @@ export function SeasonDetailsPage() {
 			</WrapperList>
 		</WrapperRoot>
 	);
-}
+};
 
 export default SeasonDetailsPage;
